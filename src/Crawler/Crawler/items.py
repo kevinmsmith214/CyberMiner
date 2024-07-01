@@ -9,5 +9,4 @@ import scrapy
 class CrawlerItem(scrapy.Item):
     url = scrapy.Field()
     title = scrapy.Field()
-    keywords = scrapy.Field()
-    pass
+
