@@ -1,11 +1,11 @@
 import requests
 import json
 
-def search_db_api(items):
+def search_db_api(query, mode):
     # API endpoint URL
     url = 'https://kuekmhuxf8.execute-api.us-east-1.amazonaws.com/project/search'
     # Create the payload as a dictionary
-    payload = {'titles': items}
+    payload = {'query': query, 'mode': mode}
 
     # Convert the dictionary to a JSON formatted string
     json_payload = json.dumps(payload)
@@ -26,7 +26,7 @@ def search_db_api(items):
         return None
 
 # Example usage
-items_to_search = ["List of Farm to Market Roads in Texas (700â€“799) - Wikipedia", "Wyoming Valley - Wikipedia"]
-
-result = search_db_api(items_to_search)
+query = "Celtic"
+mode = "AND"
+result = search_db_api(query, mode)
 print("Query Results:", result)
